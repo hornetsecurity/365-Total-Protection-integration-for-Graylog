@@ -1,0 +1,1872 @@
+{
+  "v": 1,
+  "id": "247f9475-5f71-4523-bd5c-fd825e04f60f",
+  "rev": 1,
+  "name": "hornetsecurity-365-total-protection",
+  "summary": "Graylog dashboard for Hornetsecurity by Proofpoint 365 Total Protection for Graylog",
+  "description": "Installs the Hornetsecurity by Proofpoint dashboard with 19 counters and charts matching the Wazuh dashboard, plus a recent email table. It filters on integration:hornetsecurity_365_total_protection and does not create a stream.",
+  "vendor": "Hornetsecurity by Proofpoint",
+  "url": "",
+  "entities": [
+    {
+      "v": "1",
+      "type": {
+        "name": "dashboard",
+        "version": "2"
+      },
+      "id": "ffcfc3fd-775d-42d5-b2e7-c11b03306aef",
+      "data": {
+        "summary": {
+          "@type": "string",
+          "@value": "Overview of Hornetsecurity by Proofpoint email events, classifications, remediation, and network details."
+        },
+        "search": {
+          "queries": [
+            {
+              "id": "e9e23eaa-485b-4cfb-98f9-c07b793205e0",
+              "timerange": {
+                "type": "relative",
+                "from": 604800
+              },
+              "filters": [],
+              "query": {
+                "type": "elasticsearch",
+                "query_string": "integration:hornetsecurity_365_total_protection"
+              },
+              "search_types": [
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "integration:hornetsecurity_365_total_protection"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 604800
+                  },
+                  "column_limit": null,
+                  "streams": [],
+                  "row_limit": null,
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "count()",
+                      "field": null
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [],
+                  "type": "pivot",
+                  "id": "4eaca3ac-444c-4d04-98ec-1e66d4738b3c",
+                  "filters": [],
+                  "column_groups": [],
+                  "sort": [],
+                  "stream_categories": []
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "integration:hornetsecurity_365_total_protection AND remediation_action:(Quarantine OR quarantine OR Delete OR delete OR Block OR block OR Reject OR reject OR Remediate OR remediate)"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 604800
+                  },
+                  "column_limit": null,
+                  "streams": [],
+                  "row_limit": null,
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "count()",
+                      "field": null
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [],
+                  "type": "pivot",
+                  "id": "f86b2aca-1a17-4294-aa74-2249b04f700f",
+                  "filters": [],
+                  "column_groups": [],
+                  "sort": [],
+                  "stream_categories": []
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "integration:hornetsecurity_365_total_protection AND classification:(Clean OR clean)"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 604800
+                  },
+                  "column_limit": null,
+                  "streams": [],
+                  "row_limit": null,
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "count()",
+                      "field": null
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [],
+                  "type": "pivot",
+                  "id": "18f85ca5-6f6d-460f-af9e-cd61aee1db2c",
+                  "filters": [],
+                  "column_groups": [],
+                  "sort": [],
+                  "stream_categories": []
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "integration:hornetsecurity_365_total_protection AND classification:(Spam OR spam)"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 604800
+                  },
+                  "column_limit": null,
+                  "streams": [],
+                  "row_limit": null,
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "count()",
+                      "field": null
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [],
+                  "type": "pivot",
+                  "id": "71be084f-4a16-4bdf-891e-c0d7a3df2f21",
+                  "filters": [],
+                  "column_groups": [],
+                  "sort": [],
+                  "stream_categories": []
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "integration:hornetsecurity_365_total_protection AND classification:(Malware OR malware OR Phishing OR phishing OR Virus OR virus OR Ransomware OR ransomware OR Trojan OR trojan OR Spyware OR spyware OR Threat OR threat OR Advthreat OR advthreat)"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 604800
+                  },
+                  "column_limit": null,
+                  "streams": [],
+                  "row_limit": null,
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "count()",
+                      "field": null
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [],
+                  "type": "pivot",
+                  "id": "d16b53d4-a73c-46e7-a54e-4a6c1bb991af",
+                  "filters": [],
+                  "column_groups": [],
+                  "sort": [],
+                  "stream_categories": []
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "integration:hornetsecurity_365_total_protection AND classification:(Advthreat OR advthreat)"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 604800
+                  },
+                  "column_limit": null,
+                  "streams": [],
+                  "row_limit": null,
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "count()",
+                      "field": null
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [],
+                  "type": "pivot",
+                  "id": "21edc594-5590-485d-bef0-748f513a6b76",
+                  "filters": [],
+                  "column_groups": [],
+                  "sort": [],
+                  "stream_categories": []
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "integration:hornetsecurity_365_total_protection"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 604800
+                  },
+                  "column_limit": 10,
+                  "streams": [],
+                  "row_limit": 10,
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "count()",
+                      "field": null
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": false,
+                  "row_groups": [
+                    {
+                      "type": "time",
+                      "fields": [
+                        "timestamp"
+                      ],
+                      "interval": {
+                        "type": "auto",
+                        "scaling": 1
+                      }
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "04812b6d-fb7a-4655-876b-0b48c2d9a795",
+                  "filters": [],
+                  "column_groups": [],
+                  "sort": [],
+                  "stream_categories": []
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "integration:hornetsecurity_365_total_protection"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 604800
+                  },
+                  "column_limit": 10,
+                  "streams": [],
+                  "row_limit": 10,
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "count()",
+                      "field": null
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "fields": [
+                        "classification"
+                      ],
+                      "limit": 10,
+                      "skip_empty_values": false
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "c4f73033-04c3-4098-90f0-351fd8b21fef",
+                  "filters": [],
+                  "column_groups": [],
+                  "sort": [],
+                  "stream_categories": []
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "integration:hornetsecurity_365_total_protection"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 604800
+                  },
+                  "column_limit": 10,
+                  "streams": [],
+                  "row_limit": 10,
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "count()",
+                      "field": null
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "fields": [
+                        "direction"
+                      ],
+                      "limit": 10,
+                      "skip_empty_values": false
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "a11db774-3625-472b-82c2-d6990b6f3fc4",
+                  "filters": [],
+                  "column_groups": [],
+                  "sort": [],
+                  "stream_categories": []
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "integration:hornetsecurity_365_total_protection"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 604800
+                  },
+                  "column_limit": 10,
+                  "streams": [],
+                  "row_limit": 10,
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "count()",
+                      "field": null
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "fields": [
+                        "status"
+                      ],
+                      "limit": 10,
+                      "skip_empty_values": false
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "9783519e-47df-48ff-9ecf-68c4ca42db0c",
+                  "filters": [],
+                  "column_groups": [],
+                  "sort": [],
+                  "stream_categories": []
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "integration:hornetsecurity_365_total_protection"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 604800
+                  },
+                  "column_limit": 10,
+                  "streams": [],
+                  "row_limit": 10,
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "count()",
+                      "field": null
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "fields": [
+                        "url_rewritten"
+                      ],
+                      "limit": 10,
+                      "skip_empty_values": false
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "7d50fd04-b690-46a1-8b7b-dc9aff03dbcc",
+                  "filters": [],
+                  "column_groups": [],
+                  "sort": [],
+                  "stream_categories": []
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "integration:hornetsecurity_365_total_protection"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 604800
+                  },
+                  "column_limit": 10,
+                  "streams": [],
+                  "row_limit": 10,
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "count()",
+                      "field": null
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "fields": [
+                        "archived"
+                      ],
+                      "limit": 10,
+                      "skip_empty_values": false
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "086602d5-a9a7-4f88-9ef7-00421fefb400",
+                  "filters": [],
+                  "column_groups": [],
+                  "sort": [],
+                  "stream_categories": []
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "integration:hornetsecurity_365_total_protection"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 604800
+                  },
+                  "column_limit": 10,
+                  "streams": [],
+                  "row_limit": 10,
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "count()",
+                      "field": null
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "fields": [
+                        "remediation_action"
+                      ],
+                      "limit": 10,
+                      "skip_empty_values": false
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "fff36c87-e240-40ad-9daa-45e6e7fe2e3c",
+                  "filters": [],
+                  "column_groups": [],
+                  "sort": [],
+                  "stream_categories": []
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "integration:hornetsecurity_365_total_protection"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 604800
+                  },
+                  "column_limit": 10,
+                  "streams": [],
+                  "row_limit": 10,
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "count()",
+                      "field": null
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "fields": [
+                        "incoming_encryption"
+                      ],
+                      "limit": 10,
+                      "skip_empty_values": false
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "8ad3bff2-22f2-47d0-a814-07dad6a721d5",
+                  "filters": [],
+                  "column_groups": [],
+                  "sort": [],
+                  "stream_categories": []
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "integration:hornetsecurity_365_total_protection"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 604800
+                  },
+                  "column_limit": 10,
+                  "streams": [],
+                  "row_limit": 10,
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "count()",
+                      "field": null
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "fields": [
+                        "outgoing_encryption"
+                      ],
+                      "limit": 10,
+                      "skip_empty_values": false
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "b55c9040-6c78-4689-b3e3-65006aa076af",
+                  "filters": [],
+                  "column_groups": [],
+                  "sort": [],
+                  "stream_categories": []
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "integration:hornetsecurity_365_total_protection"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 604800
+                  },
+                  "column_limit": 10,
+                  "streams": [],
+                  "row_limit": 10,
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "count()",
+                      "field": null
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "fields": [
+                        "source_hostname"
+                      ],
+                      "limit": 10,
+                      "skip_empty_values": false
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "7e87cf29-db9d-4618-8cd4-6d619a67a824",
+                  "filters": [],
+                  "column_groups": [],
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "count()",
+                      "direction": "Descending"
+                    }
+                  ],
+                  "stream_categories": []
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "integration:hornetsecurity_365_total_protection"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 604800
+                  },
+                  "column_limit": 10,
+                  "streams": [],
+                  "row_limit": 10,
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "count()",
+                      "field": null
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "fields": [
+                        "destination_hostname"
+                      ],
+                      "limit": 10,
+                      "skip_empty_values": false
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "707b66d8-cd2c-4997-af9b-c59324f54e96",
+                  "filters": [],
+                  "column_groups": [],
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "count()",
+                      "direction": "Descending"
+                    }
+                  ],
+                  "stream_categories": []
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "integration:hornetsecurity_365_total_protection"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 604800
+                  },
+                  "column_limit": 10,
+                  "streams": [],
+                  "row_limit": 10,
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "count()",
+                      "field": null
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "fields": [
+                        "source_ip"
+                      ],
+                      "limit": 10,
+                      "skip_empty_values": false
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "db9e064b-2844-4220-a131-184587e1fac7",
+                  "filters": [],
+                  "column_groups": [],
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "count()",
+                      "direction": "Descending"
+                    }
+                  ],
+                  "stream_categories": []
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "integration:hornetsecurity_365_total_protection"
+                  },
+                  "name": "chart",
+                  "timerange": {
+                    "type": "relative",
+                    "from": 604800
+                  },
+                  "column_limit": 10,
+                  "streams": [],
+                  "row_limit": 10,
+                  "series": [
+                    {
+                      "type": "count",
+                      "id": "count()",
+                      "field": null
+                    }
+                  ],
+                  "filter": null,
+                  "rollup": true,
+                  "row_groups": [
+                    {
+                      "type": "values",
+                      "fields": [
+                        "destination_ip"
+                      ],
+                      "limit": 10,
+                      "skip_empty_values": false
+                    }
+                  ],
+                  "type": "pivot",
+                  "id": "263863ac-0814-46eb-b5dd-86a4569c3de1",
+                  "filters": [],
+                  "column_groups": [],
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "count()",
+                      "direction": "Descending"
+                    }
+                  ],
+                  "stream_categories": []
+                },
+                {
+                  "query": {
+                    "type": "elasticsearch",
+                    "query_string": "integration:hornetsecurity_365_total_protection"
+                  },
+                  "name": null,
+                  "timerange": {
+                    "type": "relative",
+                    "from": 604800
+                  },
+                  "offset": 0,
+                  "streams": [],
+                  "filter": null,
+                  "decorators": [],
+                  "type": "messages",
+                  "id": "b301780f-63b6-4aeb-9786-204dee7e7bef",
+                  "limit": 100,
+                  "filters": [],
+                  "stream_categories": []
+                }
+              ]
+            }
+          ]
+        },
+        "requires": {},
+        "owner": "admin",
+        "created_at": "2026-11-13T15:59:38.402Z",
+        "state": {
+          "e9e23eaa-485b-4cfb-98f9-c07b793205e0": {
+            "selected_fields": null,
+            "static_message_list_id": null,
+            "titles": {
+              "widget": {
+                "5cb27268-ddea-419d-a3d5-58003e23c3c7": "Total Emails",
+                "0918af6c-2927-4f47-b825-06a2ee577c1a": "Emails Remediated",
+                "52d13731-4be5-4dbc-baba-352ee46d2d19": "Clean Emails",
+                "372bbb46-31d7-41af-8646-faf6c944894a": "Spam Emails",
+                "f9d7963d-15b0-460e-8eca-6642520e7ff3": "Threat Alerts",
+                "873881f6-517a-40b3-b31a-9416e746aa27": "Advanced Threat Emails",
+                "e7da0fbd-dd8c-49b8-974a-bb48611dc6c8": "Email Classification Over Time",
+                "ed2a4a92-5114-4f63-8df9-afd819559694": "Emails by Classification",
+                "e4847d93-8921-4ccd-904f-2a141a05ed8b": "Inbound / Outbound",
+                "e414fa3b-6554-4259-8b52-d3042cf2159e": "Status",
+                "c816a017-2a4a-485a-a4c0-ed33c33ff691": "URL Rewritten",
+                "912908fa-bd76-4aa6-b251-b08064ce1e40": "Archived",
+                "05ebcd38-db3b-407e-9079-e062f64df831": "Top Remediation Actions",
+                "7d6c57e1-b2f8-4d38-9f49-dec7ece2fd9a": "Incoming Encryption",
+                "11f22153-68a5-4893-b116-e95b9cc57c3b": "Outgoing Encryption",
+                "747289e5-66bf-450e-b087-7ded49cf48e2": "Top Source Hostnames",
+                "37ca7c54-18b7-44f4-826f-08f08c6ff5d1": "Top Destination Hostnames",
+                "55ad5942-937a-4175-b387-0fd754f00167": "Top Source IPs",
+                "71c55fcb-6833-4f28-b789-5bd7c7803284": "Top Destination IPs",
+                "9de61a86-19b2-4838-80f1-bcd6c36057d7": "Recent Emails"
+              },
+              "tab": {
+                "title": "Overview"
+              }
+            },
+            "widgets": [
+              {
+                "id": "5cb27268-ddea-419d-a3d5-58003e23c3c7",
+                "type": "aggregation",
+                "filter": null,
+                "filters": [],
+                "timerange": {
+                  "type": "relative",
+                  "from": 604800
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "integration:hornetsecurity_365_total_protection"
+                },
+                "streams": [],
+                "config": {
+                  "visualization": "numeric",
+                  "column_limit": 10,
+                  "event_annotation": false,
+                  "row_limit": null,
+                  "row_pivots": [],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "count()"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": []
+                }
+              },
+              {
+                "id": "0918af6c-2927-4f47-b825-06a2ee577c1a",
+                "type": "aggregation",
+                "filter": null,
+                "filters": [],
+                "timerange": {
+                  "type": "relative",
+                  "from": 604800
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "integration:hornetsecurity_365_total_protection AND remediation_action:(Quarantine OR quarantine OR Delete OR delete OR Block OR block OR Reject OR reject OR Remediate OR remediate)"
+                },
+                "streams": [],
+                "config": {
+                  "visualization": "numeric",
+                  "column_limit": 10,
+                  "event_annotation": false,
+                  "row_limit": null,
+                  "row_pivots": [],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "count()"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": []
+                }
+              },
+              {
+                "id": "52d13731-4be5-4dbc-baba-352ee46d2d19",
+                "type": "aggregation",
+                "filter": null,
+                "filters": [],
+                "timerange": {
+                  "type": "relative",
+                  "from": 604800
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "integration:hornetsecurity_365_total_protection AND classification:(Clean OR clean)"
+                },
+                "streams": [],
+                "config": {
+                  "visualization": "numeric",
+                  "column_limit": 10,
+                  "event_annotation": false,
+                  "row_limit": null,
+                  "row_pivots": [],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "count()"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": []
+                }
+              },
+              {
+                "id": "372bbb46-31d7-41af-8646-faf6c944894a",
+                "type": "aggregation",
+                "filter": null,
+                "filters": [],
+                "timerange": {
+                  "type": "relative",
+                  "from": 604800
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "integration:hornetsecurity_365_total_protection AND classification:(Spam OR spam)"
+                },
+                "streams": [],
+                "config": {
+                  "visualization": "numeric",
+                  "column_limit": 10,
+                  "event_annotation": false,
+                  "row_limit": null,
+                  "row_pivots": [],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "count()"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": []
+                }
+              },
+              {
+                "id": "f9d7963d-15b0-460e-8eca-6642520e7ff3",
+                "type": "aggregation",
+                "filter": null,
+                "filters": [],
+                "timerange": {
+                  "type": "relative",
+                  "from": 604800
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "integration:hornetsecurity_365_total_protection AND classification:(Malware OR malware OR Phishing OR phishing OR Virus OR virus OR Ransomware OR ransomware OR Trojan OR trojan OR Spyware OR spyware OR Threat OR threat OR Advthreat OR advthreat)"
+                },
+                "streams": [],
+                "config": {
+                  "visualization": "numeric",
+                  "column_limit": 10,
+                  "event_annotation": false,
+                  "row_limit": null,
+                  "row_pivots": [],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "count()"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": []
+                }
+              },
+              {
+                "id": "873881f6-517a-40b3-b31a-9416e746aa27",
+                "type": "aggregation",
+                "filter": null,
+                "filters": [],
+                "timerange": {
+                  "type": "relative",
+                  "from": 604800
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "integration:hornetsecurity_365_total_protection AND classification:(Advthreat OR advthreat)"
+                },
+                "streams": [],
+                "config": {
+                  "visualization": "numeric",
+                  "column_limit": 10,
+                  "event_annotation": false,
+                  "row_limit": null,
+                  "row_pivots": [],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "count()"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": []
+                }
+              },
+              {
+                "id": "e7da0fbd-dd8c-49b8-974a-bb48611dc6c8",
+                "type": "aggregation",
+                "filter": null,
+                "filters": [],
+                "timerange": {
+                  "type": "relative",
+                  "from": 604800
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "integration:hornetsecurity_365_total_protection"
+                },
+                "streams": [],
+                "config": {
+                  "visualization": "line",
+                  "column_limit": 10,
+                  "event_annotation": false,
+                  "row_limit": 10,
+                  "row_pivots": [
+                    {
+                      "fields": [
+                        "timestamp"
+                      ],
+                      "type": "time",
+                      "config": {
+                        "interval": {
+                          "type": "auto",
+                          "scaling": 1
+                        }
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "count()"
+                    }
+                  ],
+                  "rollup": false,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": []
+                }
+              },
+              {
+                "id": "ed2a4a92-5114-4f63-8df9-afd819559694",
+                "type": "aggregation",
+                "filter": null,
+                "filters": [],
+                "timerange": {
+                  "type": "relative",
+                  "from": 604800
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "integration:hornetsecurity_365_total_protection"
+                },
+                "streams": [],
+                "config": {
+                  "visualization": "pie",
+                  "column_limit": 10,
+                  "event_annotation": false,
+                  "row_limit": 10,
+                  "row_pivots": [
+                    {
+                      "fields": [
+                        "classification"
+                      ],
+                      "type": "values",
+                      "config": {
+                        "limit": 10
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "count()"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": []
+                }
+              },
+              {
+                "id": "e4847d93-8921-4ccd-904f-2a141a05ed8b",
+                "type": "aggregation",
+                "filter": null,
+                "filters": [],
+                "timerange": {
+                  "type": "relative",
+                  "from": 604800
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "integration:hornetsecurity_365_total_protection"
+                },
+                "streams": [],
+                "config": {
+                  "visualization": "pie",
+                  "column_limit": 10,
+                  "event_annotation": false,
+                  "row_limit": 10,
+                  "row_pivots": [
+                    {
+                      "fields": [
+                        "direction"
+                      ],
+                      "type": "values",
+                      "config": {
+                        "limit": 10
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "count()"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": []
+                }
+              },
+              {
+                "id": "e414fa3b-6554-4259-8b52-d3042cf2159e",
+                "type": "aggregation",
+                "filter": null,
+                "filters": [],
+                "timerange": {
+                  "type": "relative",
+                  "from": 604800
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "integration:hornetsecurity_365_total_protection"
+                },
+                "streams": [],
+                "config": {
+                  "visualization": "pie",
+                  "column_limit": 10,
+                  "event_annotation": false,
+                  "row_limit": 10,
+                  "row_pivots": [
+                    {
+                      "fields": [
+                        "status"
+                      ],
+                      "type": "values",
+                      "config": {
+                        "limit": 10
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "count()"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": []
+                }
+              },
+              {
+                "id": "c816a017-2a4a-485a-a4c0-ed33c33ff691",
+                "type": "aggregation",
+                "filter": null,
+                "filters": [],
+                "timerange": {
+                  "type": "relative",
+                  "from": 604800
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "integration:hornetsecurity_365_total_protection"
+                },
+                "streams": [],
+                "config": {
+                  "visualization": "pie",
+                  "column_limit": 10,
+                  "event_annotation": false,
+                  "row_limit": 10,
+                  "row_pivots": [
+                    {
+                      "fields": [
+                        "url_rewritten"
+                      ],
+                      "type": "values",
+                      "config": {
+                        "limit": 10
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "count()"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": []
+                }
+              },
+              {
+                "id": "912908fa-bd76-4aa6-b251-b08064ce1e40",
+                "type": "aggregation",
+                "filter": null,
+                "filters": [],
+                "timerange": {
+                  "type": "relative",
+                  "from": 604800
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "integration:hornetsecurity_365_total_protection"
+                },
+                "streams": [],
+                "config": {
+                  "visualization": "pie",
+                  "column_limit": 10,
+                  "event_annotation": false,
+                  "row_limit": 10,
+                  "row_pivots": [
+                    {
+                      "fields": [
+                        "archived"
+                      ],
+                      "type": "values",
+                      "config": {
+                        "limit": 10
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "count()"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": []
+                }
+              },
+              {
+                "id": "05ebcd38-db3b-407e-9079-e062f64df831",
+                "type": "aggregation",
+                "filter": null,
+                "filters": [],
+                "timerange": {
+                  "type": "relative",
+                  "from": 604800
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "integration:hornetsecurity_365_total_protection"
+                },
+                "streams": [],
+                "config": {
+                  "visualization": "pie",
+                  "column_limit": 10,
+                  "event_annotation": false,
+                  "row_limit": 10,
+                  "row_pivots": [
+                    {
+                      "fields": [
+                        "remediation_action"
+                      ],
+                      "type": "values",
+                      "config": {
+                        "limit": 10
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "count()"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": []
+                }
+              },
+              {
+                "id": "7d6c57e1-b2f8-4d38-9f49-dec7ece2fd9a",
+                "type": "aggregation",
+                "filter": null,
+                "filters": [],
+                "timerange": {
+                  "type": "relative",
+                  "from": 604800
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "integration:hornetsecurity_365_total_protection"
+                },
+                "streams": [],
+                "config": {
+                  "visualization": "pie",
+                  "column_limit": 10,
+                  "event_annotation": false,
+                  "row_limit": 10,
+                  "row_pivots": [
+                    {
+                      "fields": [
+                        "incoming_encryption"
+                      ],
+                      "type": "values",
+                      "config": {
+                        "limit": 10
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "count()"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": []
+                }
+              },
+              {
+                "id": "11f22153-68a5-4893-b116-e95b9cc57c3b",
+                "type": "aggregation",
+                "filter": null,
+                "filters": [],
+                "timerange": {
+                  "type": "relative",
+                  "from": 604800
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "integration:hornetsecurity_365_total_protection"
+                },
+                "streams": [],
+                "config": {
+                  "visualization": "pie",
+                  "column_limit": 10,
+                  "event_annotation": false,
+                  "row_limit": 10,
+                  "row_pivots": [
+                    {
+                      "fields": [
+                        "outgoing_encryption"
+                      ],
+                      "type": "values",
+                      "config": {
+                        "limit": 10
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "count()"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": []
+                }
+              },
+              {
+                "id": "747289e5-66bf-450e-b087-7ded49cf48e2",
+                "type": "aggregation",
+                "filter": null,
+                "filters": [],
+                "timerange": {
+                  "type": "relative",
+                  "from": 604800
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "integration:hornetsecurity_365_total_protection"
+                },
+                "streams": [],
+                "config": {
+                  "visualization": "bar",
+                  "column_limit": 10,
+                  "event_annotation": false,
+                  "row_limit": 10,
+                  "row_pivots": [
+                    {
+                      "fields": [
+                        "source_hostname"
+                      ],
+                      "type": "values",
+                      "config": {
+                        "limit": 10
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "count()"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "count()",
+                      "direction": "Descending"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "37ca7c54-18b7-44f4-826f-08f08c6ff5d1",
+                "type": "aggregation",
+                "filter": null,
+                "filters": [],
+                "timerange": {
+                  "type": "relative",
+                  "from": 604800
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "integration:hornetsecurity_365_total_protection"
+                },
+                "streams": [],
+                "config": {
+                  "visualization": "bar",
+                  "column_limit": 10,
+                  "event_annotation": false,
+                  "row_limit": 10,
+                  "row_pivots": [
+                    {
+                      "fields": [
+                        "destination_hostname"
+                      ],
+                      "type": "values",
+                      "config": {
+                        "limit": 10
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "count()"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "count()",
+                      "direction": "Descending"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "55ad5942-937a-4175-b387-0fd754f00167",
+                "type": "aggregation",
+                "filter": null,
+                "filters": [],
+                "timerange": {
+                  "type": "relative",
+                  "from": 604800
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "integration:hornetsecurity_365_total_protection"
+                },
+                "streams": [],
+                "config": {
+                  "visualization": "bar",
+                  "column_limit": 10,
+                  "event_annotation": false,
+                  "row_limit": 10,
+                  "row_pivots": [
+                    {
+                      "fields": [
+                        "source_ip"
+                      ],
+                      "type": "values",
+                      "config": {
+                        "limit": 10
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "count()"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "count()",
+                      "direction": "Descending"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "71c55fcb-6833-4f28-b789-5bd7c7803284",
+                "type": "aggregation",
+                "filter": null,
+                "filters": [],
+                "timerange": {
+                  "type": "relative",
+                  "from": 604800
+                },
+                "query": {
+                  "type": "elasticsearch",
+                  "query_string": "integration:hornetsecurity_365_total_protection"
+                },
+                "streams": [],
+                "config": {
+                  "visualization": "bar",
+                  "column_limit": 10,
+                  "event_annotation": false,
+                  "row_limit": 10,
+                  "row_pivots": [
+                    {
+                      "fields": [
+                        "destination_ip"
+                      ],
+                      "type": "values",
+                      "config": {
+                        "limit": 10
+                      }
+                    }
+                  ],
+                  "series": [
+                    {
+                      "config": {
+                        "name": null
+                      },
+                      "function": "count()"
+                    }
+                  ],
+                  "rollup": true,
+                  "column_pivots": [],
+                  "visualization_config": null,
+                  "formatting_settings": null,
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "count()",
+                      "direction": "Descending"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "9de61a86-19b2-4838-80f1-bcd6c36057d7",
+                "type": "messages",
+                "filter": null,
+                "filters": [],
+                "timerange": null,
+                "query": null,
+                "streams": [],
+                "config": {
+                  "fields": [
+                    "timestamp",
+                    "msg_id",
+                    "subject",
+                    "from",
+                    "to",
+                    "classification"
+                  ],
+                  "show_message_row": true,
+                  "show_summary": true,
+                  "decorators": [],
+                  "sort": [
+                    {
+                      "type": "pivot",
+                      "field": "timestamp",
+                      "direction": "Descending"
+                    }
+                  ]
+                }
+              }
+            ],
+            "widget_mapping": {
+              "5cb27268-ddea-419d-a3d5-58003e23c3c7": [
+                "4eaca3ac-444c-4d04-98ec-1e66d4738b3c"
+              ],
+              "0918af6c-2927-4f47-b825-06a2ee577c1a": [
+                "f86b2aca-1a17-4294-aa74-2249b04f700f"
+              ],
+              "52d13731-4be5-4dbc-baba-352ee46d2d19": [
+                "18f85ca5-6f6d-460f-af9e-cd61aee1db2c"
+              ],
+              "372bbb46-31d7-41af-8646-faf6c944894a": [
+                "71be084f-4a16-4bdf-891e-c0d7a3df2f21"
+              ],
+              "f9d7963d-15b0-460e-8eca-6642520e7ff3": [
+                "d16b53d4-a73c-46e7-a54e-4a6c1bb991af"
+              ],
+              "873881f6-517a-40b3-b31a-9416e746aa27": [
+                "21edc594-5590-485d-bef0-748f513a6b76"
+              ],
+              "e7da0fbd-dd8c-49b8-974a-bb48611dc6c8": [
+                "04812b6d-fb7a-4655-876b-0b48c2d9a795"
+              ],
+              "ed2a4a92-5114-4f63-8df9-afd819559694": [
+                "c4f73033-04c3-4098-90f0-351fd8b21fef"
+              ],
+              "e4847d93-8921-4ccd-904f-2a141a05ed8b": [
+                "a11db774-3625-472b-82c2-d6990b6f3fc4"
+              ],
+              "e414fa3b-6554-4259-8b52-d3042cf2159e": [
+                "9783519e-47df-48ff-9ecf-68c4ca42db0c"
+              ],
+              "c816a017-2a4a-485a-a4c0-ed33c33ff691": [
+                "7d50fd04-b690-46a1-8b7b-dc9aff03dbcc"
+              ],
+              "912908fa-bd76-4aa6-b251-b08064ce1e40": [
+                "086602d5-a9a7-4f88-9ef7-00421fefb400"
+              ],
+              "05ebcd38-db3b-407e-9079-e062f64df831": [
+                "fff36c87-e240-40ad-9daa-45e6e7fe2e3c"
+              ],
+              "7d6c57e1-b2f8-4d38-9f49-dec7ece2fd9a": [
+                "8ad3bff2-22f2-47d0-a814-07dad6a721d5"
+              ],
+              "11f22153-68a5-4893-b116-e95b9cc57c3b": [
+                "b55c9040-6c78-4689-b3e3-65006aa076af"
+              ],
+              "747289e5-66bf-450e-b087-7ded49cf48e2": [
+                "7e87cf29-db9d-4618-8cd4-6d619a67a824"
+              ],
+              "37ca7c54-18b7-44f4-826f-08f08c6ff5d1": [
+                "707b66d8-cd2c-4997-af9b-c59324f54e96"
+              ],
+              "55ad5942-937a-4175-b387-0fd754f00167": [
+                "db9e064b-2844-4220-a131-184587e1fac7"
+              ],
+              "71c55fcb-6833-4f28-b789-5bd7c7803284": [
+                "263863ac-0814-46eb-b5dd-86a4569c3de1"
+              ],
+              "9de61a86-19b2-4838-80f1-bcd6c36057d7": [
+                "b301780f-63b6-4aeb-9786-204dee7e7bef"
+              ]
+            },
+            "positions": {
+              "5cb27268-ddea-419d-a3d5-58003e23c3c7": {
+                "col": 1,
+                "row": 1,
+                "height": 2,
+                "width": 2
+              },
+              "0918af6c-2927-4f47-b825-06a2ee577c1a": {
+                "col": 3,
+                "row": 1,
+                "height": 2,
+                "width": 2
+              },
+              "52d13731-4be5-4dbc-baba-352ee46d2d19": {
+                "col": 5,
+                "row": 1,
+                "height": 2,
+                "width": 2
+              },
+              "372bbb46-31d7-41af-8646-faf6c944894a": {
+                "col": 7,
+                "row": 1,
+                "height": 2,
+                "width": 2
+              },
+              "f9d7963d-15b0-460e-8eca-6642520e7ff3": {
+                "col": 9,
+                "row": 1,
+                "height": 2,
+                "width": 2
+              },
+              "873881f6-517a-40b3-b31a-9416e746aa27": {
+                "col": 11,
+                "row": 1,
+                "height": 2,
+                "width": 2
+              },
+              "e7da0fbd-dd8c-49b8-974a-bb48611dc6c8": {
+                "col": 1,
+                "row": 3,
+                "height": 5,
+                "width": "Infinity"
+              },
+              "ed2a4a92-5114-4f63-8df9-afd819559694": {
+                "col": 1,
+                "row": 8,
+                "height": 5,
+                "width": 3
+              },
+              "e4847d93-8921-4ccd-904f-2a141a05ed8b": {
+                "col": 4,
+                "row": 8,
+                "height": 5,
+                "width": 3
+              },
+              "e414fa3b-6554-4259-8b52-d3042cf2159e": {
+                "col": 7,
+                "row": 8,
+                "height": 5,
+                "width": 3
+              },
+              "c816a017-2a4a-485a-a4c0-ed33c33ff691": {
+                "col": 10,
+                "row": 8,
+                "height": 5,
+                "width": 3
+              },
+              "912908fa-bd76-4aa6-b251-b08064ce1e40": {
+                "col": 1,
+                "row": 13,
+                "height": 5,
+                "width": 3
+              },
+              "05ebcd38-db3b-407e-9079-e062f64df831": {
+                "col": 4,
+                "row": 13,
+                "height": 5,
+                "width": 3
+              },
+              "7d6c57e1-b2f8-4d38-9f49-dec7ece2fd9a": {
+                "col": 7,
+                "row": 13,
+                "height": 5,
+                "width": 3
+              },
+              "11f22153-68a5-4893-b116-e95b9cc57c3b": {
+                "col": 10,
+                "row": 13,
+                "height": 5,
+                "width": 3
+              },
+              "747289e5-66bf-450e-b087-7ded49cf48e2": {
+                "col": 1,
+                "row": 18,
+                "height": 5,
+                "width": 6
+              },
+              "37ca7c54-18b7-44f4-826f-08f08c6ff5d1": {
+                "col": 7,
+                "row": 18,
+                "height": 5,
+                "width": 6
+              },
+              "55ad5942-937a-4175-b387-0fd754f00167": {
+                "col": 1,
+                "row": 23,
+                "height": 5,
+                "width": 6
+              },
+              "71c55fcb-6833-4f28-b789-5bd7c7803284": {
+                "col": 7,
+                "row": 23,
+                "height": 5,
+                "width": 6
+              },
+              "9de61a86-19b2-4838-80f1-bcd6c36057d7": {
+                "col": 1,
+                "row": 28,
+                "height": 7,
+                "width": "Infinity"
+              }
+            },
+            "formatting": {
+              "highlighting": []
+            },
+            "display_mode_settings": {
+              "positions": {}
+            }
+          }
+        },
+        "properties": [],
+        "title": {
+          "@type": "string",
+          "@value": "Hornetsecurity by Proofpoint 365 Total Protection for Graylog"
+        },
+        "type": "DASHBOARD",
+        "description": {
+          "@type": "string",
+          "@value": "Nineteen counters and charts matching the Hornetsecurity Wazuh dashboard, plus a recent email table. The Threat Alerts counter counts threat-related classifications; it does not create Graylog alert events."
+        }
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=7.2.2"
+        }
+      ]
+    }
+  ]
+}
